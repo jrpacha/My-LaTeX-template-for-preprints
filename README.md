@@ -1,3 +1,3 @@
-# A LaTeX template for preprints
+# My LaTeX template for preprints
 
 A simple LaTeX template for preprints
