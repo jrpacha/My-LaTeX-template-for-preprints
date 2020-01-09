@@ -230,10 +230,21 @@ Enter your abstract here.
 \noindent Here goes the introduction of the prpeprint
 
 \section{Second section}\label{sec:2ndSection}
-\noindent Write as many sections as you need and quote as many references as you
-need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
+\noindent Write as many sections as you need and quote as many references as
+you need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
 \cite{Stroustrup97}. 
 
+\begin{thm}[Pithagorean Theorem]
+	Let $\bigtriangleup\,ABC$ be a right triangle with $c$ as its
+	hypothenuse and $a$, $b$ the other two sides. Then: 
+	\begin{displaymath}
+		c^{2} = a^{2} + b^{2}.
+	\end{displaymath}	
+\end{thm}
+
+\begin{proof}
+See\ldots	
+\end{proof}
 \subsection{Subsection one}\label{sec:1stSubsectionOf1stSection}
 \noindent Write as many subsections as you need.
 
@@ -247,7 +258,8 @@ Figure~\ref{fig:lissajousCurve} shows the Lissajous curve
 	x(t) = A\sin(\omega_{1} t + \varphi),\qquad\qquad
 	y(t) = B\cos(\omega_{2} t),
 \end{equation}
-with $A = 2$, $B = 1$, $\omega_{1} = 5$, $\omega_{2} = 3$, and $\delta = \pi/4$.
+with $A = 2$, $B = 1$, $\omega_{1} = 5$, $\omega_{2} = 3$, and $\varphi =
+\pi/4$.
 
 \begin{figure}[!h]
 \centering
@@ -256,7 +268,11 @@ with $A = 2$, $B = 1$, $\omega_{1} = 5$, $\omega_{2} = 3$, and $\delta = \pi/4$.
 \label{fig:lissajousCurve}
 \end{figure}
 
+\section{Conclusions}
+Not really necessary, but convenient.
+
 \section*{Acknowledgments}
+\addcontentsline{toc}{section}{\numberline{}Acknowledgements}%
 \noindent This work was partially supported by\ldots
 
 %\section*{\refname}
