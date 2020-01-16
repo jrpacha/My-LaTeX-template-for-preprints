@@ -230,12 +230,15 @@ Enter your abstract here.
 \noindent Here goes the introduction of the prpeprint
 
 \section{Second section}\label{sec:2ndSection}
-\noindent Write as many sections as you need and quote as many references as
-you need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
-\cite{Stroustrup97}. 
+\noindent 
+The very well known Pithagora's Theorem can be formalised as follows.
 
-\begin{thm}[Pithagorean Theorem]
-	Let $\bigtriangleup\,ABC$ be a right triangle with $c$ as its
+%Write as many sections as you need and quote as many references as
+%you need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
+%\cite{Stroustrup97}. 
+
+\begin{thm}[Pithagorean Theorem]\label{teor:Pithagoras}
+	Let $\bigtriangleup\!ABC$ be a right triangle with $c$ as its
 	hypothenuse and $a$, $b$ the other two sides. Then: 
 	\begin{displaymath}
 		c^{2} = a^{2} + b^{2}.
@@ -243,30 +246,35 @@ you need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
 \end{thm}
 
 \begin{proof}
-See\ldots	
+	See~\cite{Loomis_ElisaS68}.
 \end{proof}
-\subsection{Subsection one}\label{sec:1stSubsectionOf1stSection}
-\noindent Write as many subsections as you need.
 
-\subsection{Subsection two}\label{sec:2ndSubsectionOf2ndSection}
-\noindent Write as many subsections as you need.
+\begin{cor}[Cosine rule]\label{cor:cosRule}
+	For any triangle, the diference of the squares of two of its sides
+	equals the diference of the squares of their projections on the third
+	side.
+\end{cor}
 
-\section{Third section}\label{sec:3rdSection}
-\noindent Insert as many figures as you need. For example,
-Figure~\ref{fig:lissajousCurve} shows the Lissajous curve
-\begin{equation}\label{eq:lissajousCurve}
-	x(t) = A\sin(\omega_{1} t + \varphi),\qquad\qquad
-	y(t) = B\cos(\omega_{2} t),
+\begin{proof}
+	It follows straightforward from Theorem~\ref{teor:Pithagoras}. 
+\end{proof}
+
+\begin{example}
+Thus, for the triangle in Figure~\ref{fig:triangle}, Corollary~\ref{cor:cosRule} yields
+\begin{equation}
+	\overline{AC}^{2} - \overline{BC}^{2} = \overline{AD}^{2} - \overline{BD}^{2}
 \end{equation}
-with $A = 2$, $B = 1$, $\omega_{1} = 5$, $\omega_{2} = 3$, and $\varphi =
-\pi/4$.
+\end{example}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.75]{lissajousCurve}
-\caption{Plot of Lissajous curve~\eqref{eq:lissajousCurve}.} 
-\label{fig:lissajousCurve}
+\includegraphics[scale=0.75]{triangle-crop}
+\caption{Cosine rule. Insert as many figures as you need.}
+\label{fig:triangle}
 \end{figure}
+
+\subsection{Subsection}\label{sec:1stSubsectionOf1stSection}
+\noindent Write as many subsections as you need.
 
 \section{Conclusions}
 Not really necessary, but convenient.
