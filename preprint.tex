@@ -34,7 +34,7 @@
 \usepackage{amsthm}
 \usepackage{scalerel}
 \usepackage{enumitem}
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{soul}
 %\usepackage{authblk}
 
@@ -68,6 +68,7 @@
 \usepackage{sidecap} %[outercaption]{sidecap}
 \sidecaptionvpos{table}{b}
 \usepackage{empheq}
+\usepackage{listings}
 
 %-------------------------------------------------------------------------------- 
 % pdflatex,
@@ -170,6 +171,50 @@
 
 \allowdisplaybreaks
 
+% Nota: about how to include source code in our LaTeX documents 
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+
+
+\lstdefinestyle{customc}{
+  frame=tb,
+  breaklines=true,
+  language=c,
+  basicstyle=\footnotesize\ttfamily,
+  captionpos=b,
+  showstringspaces=false
+}
+
+%\captionsetup[lstlisting]{font=footnotesize}
+
+%\lstdefinestyle{customcpp}{
+%  belowcaptionskip=1\baselineskip,
+%   breaklines=true,
+%  frame=L,
+%  xleftmargin=\parindent,
+%   language=C++,
+%  showstringspaces=false,
+%  basicstyle=\footnotesize\ttfamily,
+%  keywordstyle=\bfseries\color{green!40!black},
+%  commentstyle=\itshape\color{purple!40!black},
+%  identifierstyle=\color{blue},
+%  stringstyle=\color{orange},
+%  captionpos=b
+%}
+
+\lstset{escapechar=@, style=customc}
+
+%\renewcommand{\lstlistingname}{Llistat}% Listing -> Llistat
+%\renewcommand{\lstlistlistingname}%
+%{Índex dels \lstlistingname s}% List of Listings -> Índex dels llistats
+
+\newcommand{\includecode}[2][c]
+ {\lstinputlisting[caption=#2, escapechar=,
+   style=custom#1]{#2}<!---->}
+
+% Example
+% \includecode{sched.c}
+% \includecode[asm]{sched.s}
+
 %-------------------------------------------------------------------------------
 \begin{document}
 \title{Title of the paper}
@@ -179,21 +224,22 @@
 \centering
 First Author$^{1}$\\
 \url{first.author@e.mail}
-%\href{mailto:first.author@e.mail}{first.author@e.mail}
+%\href{mailto:first.author@e.mail}{\texttt{first.author@e.mail}}
 \end{minipage}
 \begin{minipage}[c]{0.4\linewidth}
 \centering
   Second Author$^{2}$\\
   \url{second.author@e.mail}
-  %\href{mailto:second.author@e.mail}{second.author@e.mail}
+  %\href{mailto:second.author@e.mail}{\texttt{second.author@e.mail}}
 \end{minipage}\\ [0,3in]
 \begin{minipage}[c]{0.4\linewidth}
 \centering
   Third Author$^{3}$\\
   \url{third.author@e.mail}
-  %\href{mailto:third.author@e.mail}{third.author@e.mail}
+  %\href{mailto:third.author@e.mail}{\textt{third.author@e.mail}}
 \end{minipage}\\
 \begin{minipage}[c]{0.9\linewidth}
+\small
 \centering
 \vspace{\baselineskip}\noindent
 $^{1}$Dept.~of the 1st author. Institution of the 1st author.\\
@@ -272,6 +318,17 @@ Thus, for the triangle in Figure~\ref{fig:triangle}, Corollary~\ref{cor:cosRule}
 \caption{Cosine rule. Insert as many figures as you need.}
 \label{fig:triangle}
 \end{figure}
+
+\noindent
+Listing~\ref{c-code:area} below is written in C (see~\cite{KernighanR88}), computes
+the area for of the triangle given the edges
+ 
+\lstinputlisting[style=customc,
+		  caption={Area..},
+		  label=c-code:area]{src/area.c}
+
+\noindent		  
+Write as many sections as you need.
 
 \subsection{Subsection}\label{sec:1stSubsectionOf1stSection}
 \noindent Write as many subsections as you need.
