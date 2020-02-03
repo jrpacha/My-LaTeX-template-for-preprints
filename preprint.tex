@@ -3,7 +3,7 @@
 \usepackage{geometry}
  \geometry{
  a4paper,
- total={170mm,257mm},
+ total={173mm,257mm},
  left=20mm,
  top=20mm,
  }
@@ -277,7 +277,7 @@ Enter your abstract here.
 
 \section{Second section}\label{sec:2ndSection}
 \noindent 
-The very well known Pithagora's Theorem can be formalised as follows.
+The very well known Pithagoras Theorem can be formalised as follows.
 
 %Write as many sections as you need and quote as many references as
 %you need. For example~\cite{GoossensMS94}, \cite{KernighanR88}, and
@@ -306,13 +306,15 @@ The very well known Pithagora's Theorem can be formalised as follows.
 \end{proof}
 
 \begin{example}
-Thus, for the triangle in Figure~\ref{fig:triangle}, Corollary~\ref{cor:cosRule} yields
+Thus, for the triangle in Figure~\ref{fig:triangle},
+Corollary~\ref{cor:cosRule} yields
 \begin{equation}
-	\overline{AC}^{2} - \overline{BC}^{2} = \overline{AD}^{2} - \overline{BD}^{2}
+	\overline{AC}^{2} - \overline{BC}^{2} = \overline{AD}^{2} 
+	- \overline{BD}^{2}
 \end{equation}
 \end{example}
 
-\begin{figure}[!h]
+\begin{figure}[!t]
 \centering
 \includegraphics[scale=0.75]{triangle-crop}
 \caption{Cosine rule. Insert as many figures as you need.}
@@ -320,11 +322,11 @@ Thus, for the triangle in Figure~\ref{fig:triangle}, Corollary~\ref{cor:cosRule}
 \end{figure}
 
 \noindent
-Listing~\ref{c-code:area} below is written in C (see~\cite{KernighanR88}), computes
-the area for of the triangle given the edges
+Listing~\ref{c-code:area} below is written in C (see~\cite{KernighanR88}),
+computes the area for of the triangle given the edges
  
 \lstinputlisting[style=customc,
-		  caption={Area..},
+		  caption={Computation of a triangle's area given its three sides.},
 		  label=c-code:area]{src/area.c}
 
 \noindent		  
@@ -338,7 +340,8 @@ Not really necessary, but convenient.
 
 \section*{Acknowledgments}
 \addcontentsline{toc}{section}{\numberline{}Acknowledgements}%
-\noindent This work was partially supported by\ldots
+\noindent To Pithagoras for his celebrated theorem, and to Dennis Ritchie and
+Brian Kernighan for inventing the C language. 
 
 %\section*{\refname}
 \bibliographystyle{plain}

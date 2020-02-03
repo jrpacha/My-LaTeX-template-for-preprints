@@ -5,6 +5,7 @@
 int main(int argc, char *argv[])
 {
 	float a,b,c,p,h,area;
+
 	if (argc < 4) {
 		fprintf(stderr,"Not enough args. Use: area a b c\n");
 		exit(-1);
@@ -16,13 +17,13 @@ int main(int argc, char *argv[])
 
 	p = 0.5*(c*c+b*b-a*a)/c;
 
-	if (p*(b-p) < 0.0) {
-		fprintf(stderr,"ERROR: no triangle\n");
+	if (fabs(p/b) > 1.0) {
+		fprintf(stderr,"ERROR: no triangle for the given edges\n");
 		exit(-2);
 	}
 
 	h = sqrt(b*b-p*p);
-	area = c*h/2.0;
+	area = 0.5*c*h;
 
 	fprintf(stdout,"Area of the tringle: %f\n",area);
 
